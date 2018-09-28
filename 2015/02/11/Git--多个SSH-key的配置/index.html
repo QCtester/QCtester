@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Git--多个SSH-key的配置 | Qin朝 | 我是一名测试</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="About SSHSSH是Secure Shell的缩写，即“安全外壳协议”，专为远程登录会话和其他网络服务提供安全性的协议，是一项计算机上的安全协议。   Using SSH in GitGit使用SSH现在本地创建一对密钥，然后把公钥放在服务器上，从而建立了本地、远程认证关系。">
+<meta name="keywords" content="Git,SSH">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git--多个SSH-key的配置">
+<meta property="og:url" content="https://QCtester.github.io/2015/02/11/Git--多个SSH-key的配置/index.html">
+<meta property="og:site_name" content="Qin朝 | 我是一名测试">
+<meta property="og:description" content="About SSHSSH是Secure Shell的缩写，即“安全外壳协议”，专为远程登录会话和其他网络服务提供安全性的协议，是一项计算机上的安全协议。   Using SSH in GitGit使用SSH现在本地创建一对密钥，然后把公钥放在服务器上，从而建立了本地、远程认证关系。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-01-25T23:44:31.014Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git--多个SSH-key的配置">
+<meta name="twitter:description" content="About SSHSSH是Secure Shell的缩写，即“安全外壳协议”，专为远程登录会话和其他网络服务提供安全性的协议，是一项计算机上的安全协议。   Using SSH in GitGit使用SSH现在本地创建一对密钥，然后把公钥放在服务器上，从而建立了本地、远程认证关系。">
+  
+    <link rel="alternate" href="/atom.xml" title="Qin朝 | 我是一名测试" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Qin朝 | 我是一名测试</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">You are the best!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://QCtester.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Git--多个SSH-key的配置" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/02/11/Git--多个SSH-key的配置/" class="article-date">
+  <time datetime="2015-02-11T13:52:54.000Z" itemprop="datePublished">2015-02-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git--多个SSH-key的配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="About-SSH"><a href="#About-SSH" class="headerlink" title="About SSH"></a>About SSH</h2><p>SSH是Secure Shell的缩写，即“安全外壳协议”，专为远程登录会话和其他网络服务提供安全性的协议，是一项计算机上的安全协议。  </p>
+<h2 id="Using-SSH-in-Git"><a href="#Using-SSH-in-Git" class="headerlink" title="Using SSH in Git"></a>Using SSH in Git</h2><p>Git使用SSH现在本地创建一对密钥，然后把公钥放在服务器上，从而建立了本地、远程认证关系。  <a id="more"></a><br>当服务器发送请求时，如<code>git push</code>，推送更改到远程仓库。会通过你发送过来的共有密钥和服务器上的共有密钥进行比较，如果两个密钥一致则服务器验证通过。  </p>
+<h2 id="The-first-SSH-Key"><a href="#The-first-SSH-Key" class="headerlink" title="The first SSH Key"></a>The first SSH Key</h2><ul>
+<li><strong>生成SSH Key</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>查看生成的Key文件</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ls</span><br></pre></td></tr></table></figure>
+<p>正确的应该显示：公钥文件<code>id_rsa.pub</code>和私钥文件<code>id_rsa</code>。  </p>
+<ul>
+<li><strong>复制公钥</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>复制成功后，添加到Git上【Account settings -&gt; SSH Keys -&gt; Add SSH Key】</p>
+<ul>
+<li><strong>测试SSH</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line"></span><br><span class="line">Hi xxxxx! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+<h2 id="The-second-SSH-Key"><a href="#The-second-SSH-Key" class="headerlink" title="The second SSH Key"></a>The second SSH Key</h2><p>生成一个SSH Key基本是没什么问题的，但是想要生成两个SSH Key的时候，就会遇到问题了：直接生成的话，第二个生成的SSH Key会覆盖第一个生成的SSH Key。<br>所以呢：  </p>
+<blockquote>
+<p>1.需要生成两个SSH Key。<br>2.<code>git push</code>的时候能区分两个账号，并将修改的内容推送到对应的仓库</p>
+</blockquote>
+<p>如何做到1和2呢：  </p>
+<blockquote>
+<p>1.生成SSH Key的时候，文件名不一样（这样可以避免同名覆盖的问题）<br>2.设置不同的Host（Host和HostName一一对应起来）<br>3.取消Git的全局设置（每个仓库设置独立的用户名/邮箱）</p>
+</blockquote>
+<h4 id="1-生成第二个SSH-Key"><a href="#1-生成第二个SSH-Key" class="headerlink" title="1. 生成第二个SSH Key"></a>1. 生成第二个SSH Key</h4><ul>
+<li><strong>生成第二个SSH Key，并命名为<code>id_rsa_2</code>（只要和第一个SSH Key的文件名称不一样就行了）</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -f ~/.ssh/id_rsa_2 -C <span class="string">"email@xx.xx"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>查看生成的Key文件</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ls</span><br></pre></td></tr></table></figure>
+<p>正确的应该显示：公钥文件<code>id_rsa.pub</code>私钥文件<code>id_rsa</code>和公钥文件<code>id_rsa_2.pub</code>私钥文件<code>id_rsa_2</code>。  </p>
+<ul>
+<li><strong>复制公钥</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ clip &lt; ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>复制成功后，添加到Git上【Account settings -&gt; SSH Keys -&gt; Add SSH Key】</p>
+<h4 id="2-设置不同的Host"><a href="#2-设置不同的Host" class="headerlink" title="2. 设置不同的Host"></a>2. 设置不同的Host</h4><ul>
+<li><strong>在<code>~/.ssh</code>目录下新建一个config文件</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi config</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>添加如下内容(根据自己的用户名/邮箱信息来设置)</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># github</span></span><br><span class="line">Host github.com</span><br><span class="line">  HostName github.com</span><br><span class="line">  PreferredAuthentications publickey</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa</span><br><span class="line"></span><br><span class="line"><span class="comment"># gitcafe</span></span><br><span class="line">Host test.github.com</span><br><span class="line">  HostName github.com</span><br><span class="line">  PreferredAuthentications publickey</span><br><span class="line">  IdentityFile ~/.ssh/id_rsa_2</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>测试SSH</strong></li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">$ ssh -T git@test.github.com</span><br><span class="line"></span><br><span class="line">Hi xxxxx! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+<p>Wonderful！you did it！</p>
+<h4 id="3-取消Git的全局设置"><a href="#3-取消Git的全局设置" class="headerlink" title="3. 取消Git的全局设置"></a>3. 取消Git的全局设置</h4><ul>
+<li>取消Git的全局用户名、邮箱设置</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config -global -<span class="built_in">unset</span> user.name</span><br><span class="line">$ git config -global -<span class="built_in">unset</span> user.email</span><br></pre></td></tr></table></figure>
+<ul>
+<li>cd到需要使用的文件夹下，重新配置用户名、邮箱</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config user.email <span class="string">"xxx@xx.xx"</span></span><br><span class="line">$ git config user.name <span class="string">"xxx"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>测试一下远程地址</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>备注：取消Git的全局设置非必须的，看个人情况来设置哈；<br>我主要是用来设置Blog、工作Git项目及其他个人Git项目；</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://QCtester.github.io/2015/02/11/Git--多个SSH-key的配置/" data-id="cjmm3mwm50000v9lqpmapq3h7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSH/">SSH</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/03/12/Charles--安装和功能简介/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Charles--安装和功能简介
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/26/JDK--安装及环境搭建 win10/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JDK--安装及环境搭建 win10</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PiP/">PiP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TestCase/">TestCase</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Themes/">Themes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vi/">vi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10/">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抓包/">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试用例/">测试用例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/PiP/" style="font-size: 10px;">PiP</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/TestCase/" style="font-size: 20px;">TestCase</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a> <a href="/tags/vi/" style="font-size: 10px;">vi</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/抓包/" style="font-size: 10px;">抓包</a> <a href="/tags/测试用例/" style="font-size: 20px;">测试用例</a> <a href="/tags/环境搭建/" style="font-size: 10px;">环境搭建</a> <a href="/tags/黑盒测试/" style="font-size: 20px;">黑盒测试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/01/16/pip--安装教程/">pip--安装教程</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/02/Themes--更改Hexo主题/">Themes--更改Hexo主题</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/12/Charles--安装和功能简介/">Charles--安装和功能简介</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/11/Git--多个SSH-key的配置/">Git--多个SSH-key的配置</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/26/JDK--安装及环境搭建 win10/">JDK--安装及环境搭建 win10</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Qin朝<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

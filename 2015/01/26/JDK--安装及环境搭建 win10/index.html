@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JDK--安装及环境搭建 win10 | Qin朝 | 我是一名测试</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天试着搭建了win10 64位的JDK环境，好久没碰Windows系统了，几经周折，总算大功告成了。废话不多说了，先记录一下我搭建的过程和遇到的问题。步骤：    安装JDK + JRE   配置环境变量    检验JDK的安装">
+<meta name="keywords" content="JDK,环境搭建,win10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JDK--安装及环境搭建 win10">
+<meta property="og:url" content="https://QCtester.github.io/2015/01/26/JDK--安装及环境搭建 win10/index.html">
+<meta property="og:site_name" content="Qin朝 | 我是一名测试">
+<meta property="og:description" content="今天试着搭建了win10 64位的JDK环境，好久没碰Windows系统了，几经周折，总算大功告成了。废话不多说了，先记录一下我搭建的过程和遇到的问题。步骤：    安装JDK + JRE   配置环境变量    检验JDK的安装">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://qctester.github.io/assets/blogImg/JDK.png">
+<meta property="og:image" content="https://qctester.github.io/assets/blogImg/JDKsetup.png">
+<meta property="og:image" content="https://qctester.github.io/assets/blogImg/path.png">
+<meta property="og:updated_time" content="2018-01-25T23:47:38.376Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JDK--安装及环境搭建 win10">
+<meta name="twitter:description" content="今天试着搭建了win10 64位的JDK环境，好久没碰Windows系统了，几经周折，总算大功告成了。废话不多说了，先记录一下我搭建的过程和遇到的问题。步骤：    安装JDK + JRE   配置环境变量    检验JDK的安装">
+<meta name="twitter:image" content="https://qctester.github.io/assets/blogImg/JDK.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Qin朝 | 我是一名测试" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Qin朝 | 我是一名测试</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">You are the best!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://QCtester.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JDK--安装及环境搭建 win10" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/26/JDK--安装及环境搭建 win10/" class="article-date">
+  <time datetime="2015-01-26T08:33:48.000Z" itemprop="datePublished">2015-01-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JDK--安装及环境搭建 win10
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天试着搭建了win10 64位的JDK环境，好久没碰Windows系统了，几经周折，总算大功告成了。废话不多说了，先记录一下我搭建的过程和遇到的问题。<br>步骤：  </p>
+<ul>
+<li>安装JDK + JRE  </li>
+<li>配置环境变量   </li>
+<li>检验JDK的安装  <a id="more"></a>
+<h4 id="JDK-JRE-安装"><a href="#JDK-JRE-安装" class="headerlink" title="JDK + JRE 安装"></a>JDK + JRE 安装</h4>想要安装JDK，首先需要有JDK的安装包，所以：  </li>
+</ul>
+<ol>
+<li>下载JDK<br>点击JDK的<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">官网下载地址</a><br>根据电脑的系统(我的是win10、64位)，选择需要下载的JDK<br><img src="/assets/blogImg/JDK.png" alt="picture">  </li>
+<li>安装JDK<br>找到下载的JDK安装包，双击进入安装；<br>根据安装提示弹窗的说明，一步步安装，<strong>注意安装的路径不！能！包！含！中！文！名！</strong>可以<strong>更改</strong>安装的目录，但是一定要记住自己安装的目录。我选择了默认的目录，直接安装。<br><img src="/assets/blogImg/JDKsetup.png" alt="picture">  </li>
+<li>安装JRE<br>安装完JDK后，会自动提示你安装JRE的；<br>根据安装提示弹窗的说明，一步步安装，同JDK的安装，可以<strong>更改</strong>安装的目录，但是不能选中JDK的安装目录，否则会覆盖掉JDK目录下的JRE目录的。我选择了默认的目录，直接安装。  <h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a>配置环境变量</h4>安装好了JDK和JRE之后，就开始环境变量的配置了：  </li>
+<li>我的电脑 → 右键 → 属性 → 高级系统设置 → 环境变量<br><img src="/assets/blogImg/path.png" alt="picture">  </li>
+<li>新建一个变量名为<strong>“JAVA_HOME”</strong>的系统变量，变量值为<strong>“JDK的安装目录，根据个人所安装的目录修改”</strong>（我的变量值是：C:\Program Files\Java\jdk1.8.0_131）。注意：使用传统的“JAVA_HOME”环境变量名称，否则打开Android studio时可能会因为找不到JDK的路径报错。  </li>
+<li>再新建一个变量名为<strong>“CLASSPATH”</strong>，变量值为<strong>“.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;”</strong>的系统变量，注意前面的<strong>点号</strong>和<strong>分号</strong>都是有的！  </li>
+<li>打开<strong>“Path”</strong>系统变量，点击新建，添加<strong>“%JAVA_HOME%\bin”和“%JAVA_HOME%\jre\bin”</strong>两个系统变量。（这一步添加变量到Path，使得系统可以在任何路径下识别java命令。）  </li>
+<li>点击<strong>“确认”</strong>保存环境变量的配置。  <h4 id="检验JDK的安装"><a href="#检验JDK的安装" class="headerlink" title="检验JDK的安装"></a>检验JDK的安装</h4>配置完JDK的环境变量后，就开始检验了：  </li>
+<li>按Window+R，打开命令行窗口；  </li>
+<li>分别输入java和java -version和javac都<strong>正常运行</strong>即代表java已经正确安装，其中 java -version代表你安装的java的版本。  </li>
+<li>如果出现类似”java不是内部或外部命令”等提示语句：  <blockquote>
+<p>检查你的环境变量是否正确配置，如果有误，重新配置一遍;<br>或者JDK和JRE安装目录是否重复，如果重复，可重新安装JDK。  </p>
+</blockquote>
+</li>
+</ol>
+<p><strong>随笔：Little funny in daily</strong></p>
+<blockquote>
+<p><em>Q：为什么提示xxxxx不识别呀</em><br>W：安装路径有中文名字呢~<br><em>Q：为什么要添加到Path呀</em><br>W：便于识别Java命令呀~<br><em>Q：为什么提示java不是内部命令呀</em><br>w：你是不是环境变量配错了<br><em>Q：好呢我在检查一遍~！</em></p>
+</blockquote>
+<h2 id=""><a href="#" class="headerlink" title=" "></a> </h2><pre><code>Life is limited and be happy to enjoy every day!
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://QCtester.github.io/2015/01/26/JDK--安装及环境搭建 win10/" data-id="cjmm3mwmf0003v9lq7lmm8c4h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDK/">JDK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/win10/">win10</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境搭建/">环境搭建</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/02/11/Git--多个SSH-key的配置/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git--多个SSH-key的配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/25/vi--常用命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vi--常用命令</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PiP/">PiP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TestCase/">TestCase</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Themes/">Themes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vi/">vi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10/">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抓包/">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试用例/">测试用例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/PiP/" style="font-size: 10px;">PiP</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/TestCase/" style="font-size: 20px;">TestCase</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a> <a href="/tags/vi/" style="font-size: 10px;">vi</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/抓包/" style="font-size: 10px;">抓包</a> <a href="/tags/测试用例/" style="font-size: 20px;">测试用例</a> <a href="/tags/环境搭建/" style="font-size: 10px;">环境搭建</a> <a href="/tags/黑盒测试/" style="font-size: 20px;">黑盒测试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/01/16/pip--安装教程/">pip--安装教程</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/02/Themes--更改Hexo主题/">Themes--更改Hexo主题</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/12/Charles--安装和功能简介/">Charles--安装和功能简介</a>
+          </li>
+        
+          <li>
+            <a href="/2015/02/11/Git--多个SSH-key的配置/">Git--多个SSH-key的配置</a>
+          </li>
+        
+          <li>
+            <a href="/2015/01/26/JDK--安装及环境搭建 win10/">JDK--安装及环境搭建 win10</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Qin朝<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
