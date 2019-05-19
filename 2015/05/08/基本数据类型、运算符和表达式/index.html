@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>第三章 · 基本数据类型、运算符和表达式 | Qin朝 | 我是一名测试</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="数据类型的概念及其分类，达到“识记”层次1.1 了解数据类型的概念1.2 了解C语言中数据类型的分类     符号常量的应用，达到“简单应用”层次2.1 掌握符号常量的定义方法2.2 能在程序中正确使用符号常量">
+<meta name="keywords" content="学习,高级语言程序设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第三章 · 基本数据类型、运算符和表达式">
+<meta property="og:url" content="https://QCtester.github.io/2015/05/08/基本数据类型、运算符和表达式/index.html">
+<meta property="og:site_name" content="Qin朝 | 我是一名测试">
+<meta property="og:description" content="数据类型的概念及其分类，达到“识记”层次1.1 了解数据类型的概念1.2 了解C语言中数据类型的分类     符号常量的应用，达到“简单应用”层次2.1 掌握符号常量的定义方法2.2 能在程序中正确使用符号常量">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-03-30T01:55:27.346Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第三章 · 基本数据类型、运算符和表达式">
+<meta name="twitter:description" content="数据类型的概念及其分类，达到“识记”层次1.1 了解数据类型的概念1.2 了解C语言中数据类型的分类     符号常量的应用，达到“简单应用”层次2.1 掌握符号常量的定义方法2.2 能在程序中正确使用符号常量">
+  
+    <link rel="alternate" href="/atom.xml" title="Qin朝 | 我是一名测试" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Qin朝 | 我是一名测试</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">You are the best!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://QCtester.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-基本数据类型、运算符和表达式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/08/基本数据类型、运算符和表达式/" class="article-date">
+  <time datetime="2015-05-08T01:31:45.000Z" itemprop="datePublished">2015-05-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      第三章 · 基本数据类型、运算符和表达式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>数据类型的概念及其分类，达到“识记”层次<br>1.1 了解数据类型的概念<br>1.2 了解C语言中数据类型的分类    </li>
+<li>符号常量的应用，达到“简单应用”层次<br>2.1 掌握符号常量的定义方法<br>2.2 能在程序中正确使用符号常量    </li>
+</ol>
+<a id="more"></a>  
+<ol start="3">
+<li>基本类型数据在内存中的存放方式，达到“识记”层次<br>3.1 了解整型（整型、短整型、长整型、无符号整型、无符号短整型、无符号长整型）数据在内存的存放方式。<br>3.2 了解字符型数据在内存的存放方式<br>3.3 了解字符串常量在内存的存放方式  </li>
+<li>表达式的构成规则，达到“简单应用”层次。<br>4.1 熟练掌握算术表达式的构成和运算规则<br>4.2 熟练掌握关系和逻辑表达式的构成和运算规则<br>4.3 熟练掌握赋值表达式的构成和运算规则<br>4.4 熟练掌握逗号和条件表达式的构成和运算规则  </li>
+</ol>
+<h3 id="C语言的数据类型"><a href="#C语言的数据类型" class="headerlink" title="C语言的数据类型"></a>C语言的数据类型</h3><p>数据类型是指数据的内在表现形式。<br>数据类型：</p>
+<ul>
+<li>基本类型：整型、实型、字符型  </li>
+<li>构造类型：数组型、结构型  </li>
+<li>指针型</li>
+<li>空类型</li>
+</ul>
+<p>构造类型是指由若干个相关的基本类型数据组合在一起形成的一种复杂的数据类型。<br>数组是由相同类型数据组合而成的。<br>结构型可以由不同数据类型组合而成的。<br>指针型是一种特殊的数据类型，它是用来表示内存地址的。<br>空类型是从语法完整性角度给出的数据类型，表示该处不需要数据值，因而没有类型。  </p>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>常量又叫常数，它是程序运行过程中其值不改变的数据。由于它是以字面格式直接写在程序中，所以也称为字面常量。<br>C语言规定常量有整型常量、实型常量、字符常量、字符串常量。<br>常量是不需要事先定义的，只要在程序中需要的地方直接写出即可。常量的数据类型是由书写方法自动默认的。  </p>
+<h4 id="整型常量"><a href="#整型常量" class="headerlink" title="整型常量"></a>整型常量</h4><p>整型常量就是通常的整数，包括正整数、负整数和0，其数据类型显然是整型。<br><strong>短整型常量</strong>  </p>
+<ol>
+<li>十进制整数。<br>十进制整数就是通常整数的写法。  </li>
+<li>八进制整数。<br>八进制整数的书写形式是在通常八进制整数的前面加一个数字0。  </li>
+<li>十六进制整数。<br>十六进制整数的书写形式是在通常十六进制的前面加0x。<br>整型常量在一般微型机中占用2个字节，数值范围：-32768 ~ +32767.  </li>
+</ol>
+<p><strong>长整型常量</strong><br>在计算机中占用4个字节，数值范围：-2147483648 ~ +2147483647.<br>长整型常量的书写，在整数的末尾加上小写字母“l”或者大写字母“L”。  </p>
+<h4 id="实型常量"><a href="#实型常量" class="headerlink" title="实型常量"></a>实型常量</h4><p>实型常量只使用十进制，它的书写形式有两种：  </p>
+<ol>
+<li>一般形式的实数。它是由整数部分、小数点、小数部分组成，其中整数部分或小数部分可以省略其中的一个。  </li>
+<li>指数形式的实数。它是由尾数部分、小写字母e或大写字母E、指数部分组成，形式如“尾数E指数”。<br>实型常量在一般的微型机中占用4个字节，数值范围：-10的38次方 ~ 10的38次方，有效数字是7位。  </li>
+</ol>
+<h4 id="字符常量"><a href="#字符常量" class="headerlink" title="字符常量"></a>字符常量</h4><p>字符常量用两个单引号（’）前后括住的单个字符来表示。<br>由于”/“在转义字符中作为特殊字符使用，而“’”作为字符常量的标记，“””作为字符串常量的标记，所以若用到这三个字符时，必须写成转义字符形式，即用’\‘,’\’’,’\”‘来表示字符”\”,”‘“,”””,而不能直接写成”\”,”‘“,”””。<br>C语言规定，字母是区分大小写的，所以‘a’和‘A’是不同的字符常量。<br>在内存中，每个字符常量都占用一个字节，具体存放的是该字符对应的ASCII代码值。<br>由于整型常量在内存中存放的是整数值，如果其值在0~127之间，C语言规定也可以将其看成一个字符型常量，对应的字符就是该值作为ASCII代码值所对应的那个字符。  </p>
+<h4 id="字符串常量"><a href="#字符串常量" class="headerlink" title="字符串常量"></a>字符串常量</h4><p>字符串常量简称为”字符串“。字符串就是用两个双引号（”）前后括住的一串字符。<br>转义字符也可以出现在字符串中，要特别注意双引号是作为字符串的标记，所以在字符串中使用双引号必须用转义字符“\””。<br>C语言规定，字符串中的字母是区分大小写的。<br>字符串中的字符可以是1个，多个，也可以没有。没有字符的字符串称为”空字符串“。<br>一个字符串中所有字符的个数称为该字符串的长度，其中每个转义字符只当做一个字符。<br>C语言规定，每个字符串在内存中占用的字节数等于字符串的长度+1。其中最后一个字节存放的字符为”空字符“，其值为0，书写时常用转义字符”\0”来表示，在C语言中称为字符串结束标记。  </p>
+<h4 id="符号常量"><a href="#符号常量" class="headerlink" title="符号常量"></a>符号常量</h4><p>符号常量是常量的另一种表示方法。<br>符号常量的定义方法如下：<strong>#define 符号常量 常量</strong><br>其中符号常量应按标识符的规则构成，为了和变量名、数组名等相区别，建议用大写英文字母组成。其中的常量可以是任何类型。<br>符号常量的定义一般放在程序的开头，每个定义必须独占一行，其后不跟分号。<br>在程序中使用符号常量有两点好处。一是修改程序方便，二为阅读程序提供了方便。  </p>
+<h4 id="宏定义命令"><a href="#宏定义命令" class="headerlink" title="宏定义命令"></a>宏定义命令</h4><p>符号常量定义是C语言的一条命令，称为“宏定义命令”。<br>宏定义命令的一般格式如下：<strong>#define  宏名  一串符号</strong><br>在定义宏时，其中的“一串字符”还可以含有已经定义过的宏名，称为嵌套宏定义。<br>在宏替换时，仅仅把宏名替换成对应的一串符号，并不考虑其含义。  </p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><p>变量是指在程序运行过程中其值可以发生变化的量，通常是用来保存程序运行过程中的输入数据、计算获得的中间结果和最终结果。<br>变量的取名规则同标识符，其中的英文字母常用小写。<br>每个变量都要占用连续的若干个字节，所占用的字节数由变量的数据类型确定。其中第1个字节的地址称为变量的地址。<br>C语言规定，程序中变量的地址用“&amp;变量名”来表示。  </p>
+<h4 id="变量的数据类型及其定义"><a href="#变量的数据类型及其定义" class="headerlink" title="变量的数据类型及其定义"></a>变量的数据类型及其定义</h4><p>C语言规定，变量可以是任何一种数据类型。<br><strong>字符串只能是常量，C语言中没有字符串变量</strong><br>每个变量在使用前都必须定义，定义变量的语句格式如下：<br>&emsp;&emsp;<strong>数据类型符   变量名1，  变量名2，…;</strong>  </p>
+<p>基本数据类型符  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">数据类型</th>
+<th style="text-align:left">数据类型符</th>
+<th style="text-align:left">占用字节数</th>
+<th style="text-align:left">数值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">整型</td>
+<td style="text-align:left">int</td>
+<td style="text-align:left">2(或4)</td>
+<td style="text-align:left">同短整型(或长整型)</td>
+</tr>
+<tr>
+<td style="text-align:left">短整型</td>
+<td style="text-align:left">short</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">-32768 ~ +32767（-2的15次方 ~ 2的15次方-1）</td>
+</tr>
+<tr>
+<td style="text-align:left">长整型</td>
+<td style="text-align:left">long</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">-2147483648 ~ +2147483647（-2的31次方 ~ 2的31次方-1）</td>
+</tr>
+<tr>
+<td style="text-align:left">无符号整型</td>
+<td style="text-align:left">unsigned[int]</td>
+<td style="text-align:left">2(或4)</td>
+<td style="text-align:left">同无符号短整型（或长整型）</td>
+</tr>
+<tr>
+<td style="text-align:left">无符号短整型</td>
+<td style="text-align:left">unsigned short</td>
+<td style="text-align:left">2</td>
+<td style="text-align:left">0 ~ 65535（0 ~ 2的16次方-1）</td>
+</tr>
+<tr>
+<td style="text-align:left">无符号长整型</td>
+<td style="text-align:left">unsigned long</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">0 ~ 4294967295 （0 ~ 2的32次方-1）</td>
+</tr>
+<tr>
+<td style="text-align:left">单精度实型</td>
+<td style="text-align:left">float</td>
+<td style="text-align:left">4</td>
+<td style="text-align:left">-10的38次方 ~ 10的38次方（保留7位有效数字）</td>
+</tr>
+<tr>
+<td style="text-align:left">双精度实型</td>
+<td style="text-align:left">double</td>
+<td style="text-align:left">8</td>
+<td style="text-align:left">-10的308次方 ~ 10的308次方（保留11位有效数字）</td>
+</tr>
+<tr>
+<td style="text-align:left">字符型</td>
+<td style="text-align:left">char</td>
+<td style="text-align:left">1</td>
+<td style="text-align:left">-128 ~ +127</td>
+</tr>
+</tbody>
+</table>
+<p><strong>对变量进行定义时，要注意下列几点：</strong>  </p>
+<ol>
+<li>对变量的定义可以放在函数之外，也可以放在函数体中或复合语句中。如果是放在函数体或复合语句中，则必须集中放在最前面。  </li>
+<li>被定义为整型（包括int、short、long）的变量，若其值在-128 ~ 127之间，可以当做字符型变量使用。  </li>
+<li>被定义为无符号整型（包括unsigned int、unsigned short、unsigned long）的变量，若其值在0 ~ 255之间，也可以当做字符型变量使用。  </li>
+<li>被定义为字符型的变量，可以当做整型（包括 int、short、long）变量使用，其值将在-128 ~ 127之间；也可以当做无符号整型（包括 unsigned int、unsigned short、unsigned long）变量使用，其值在0 ~ 255之间。  </li>
+<li>当定义了某个变量后，会自动给它分配连续的内存单元。内存单元的数目是这个变量对应的数据类型占用字节数。  </li>
+</ol>
+<h4 id="变量的初始化"><a href="#变量的初始化" class="headerlink" title="变量的初始化"></a>变量的初始化</h4><p>变量的初始化是给变量赋值的一种方式。在定义变量的同时给变量赋予初始值就称为变量的初始化。<br>含有变量赋初值的变量定义语句格式如下：<br>&emsp;&emsp;<strong>数据类型符  变量名1 = 初值1， 变量名2 = 初值2，…;</strong>  </p>
+<h4 id="变量的定义语句"><a href="#变量的定义语句" class="headerlink" title="变量的定义语句"></a>变量的定义语句</h4><p>一般的变量定义语句格式如下：<br>&emsp;&emsp;<strong>数据类型符  变量名1 = 初值1，…，变量名n = 初值n；</strong>  </p>
+<h4 id="有名常量的定义"><a href="#有名常量的定义" class="headerlink" title="有名常量的定义"></a>有名常量的定义</h4><p>在程序中，如果定义了变量并赋予其初值，但又不希望程序中修改其值，可以将该变量定义成有名常量（因为其值不变，本质上还是常量）。<br>有名常量的定义方法如下：<br>&emsp;&emsp;<strong>ocnst 数据类型符  变量名1 = 初值1，变量名2 = 初值2，…；</strong><br>有名常量的值是通过赋初值的方式获得，不能用赋值方式获得值。而且，获得初值后，程序中将不能改变其值。  </p>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><pre><code>TestEngineer！You make my life more exciting.  
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://QCtester.github.io/2015/05/08/基本数据类型、运算符和表达式/" data-id="cjvv1qd03000mscjfsthzhewi" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高级语言程序设计/">高级语言程序设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/01/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/07/C语言的基本知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C语言的基本知识</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-程序设计/">C++程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacDown语法/">MacDown语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PiP/">PiP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TestCase/">TestCase</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Themes/">Themes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vi/">vi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10/">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/words/">words</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对象/">对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抓包/">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据的表示与运算/">数据的表示与运算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试用例/">测试用例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/美食/">美食</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机系统概述/">计算机系统概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/近现代史/">近现代史</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高级语言程序设计/">高级语言程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/C-程序设计/" style="font-size: 10px;">C++程序设计</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Language/" style="font-size: 10px;">Language</a> <a href="/tags/MacDown语法/" style="font-size: 10px;">MacDown语法</a> <a href="/tags/PiP/" style="font-size: 10px;">PiP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/TestCase/" style="font-size: 12.5px;">TestCase</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a> <a href="/tags/vi/" style="font-size: 10px;">vi</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/words/" style="font-size: 10px;">words</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/总结/" style="font-size: 12.5px;">总结</a> <a href="/tags/抓包/" style="font-size: 10px;">抓包</a> <a href="/tags/数据的表示与运算/" style="font-size: 10px;">数据的表示与运算</a> <a href="/tags/测试用例/" style="font-size: 12.5px;">测试用例</a> <a href="/tags/环境搭建/" style="font-size: 10px;">环境搭建</a> <a href="/tags/生活/" style="font-size: 12.5px;">生活</a> <a href="/tags/美食/" style="font-size: 10px;">美食</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a> <a href="/tags/计算机系统概述/" style="font-size: 10px;">计算机系统概述</a> <a href="/tags/计算机组成原理/" style="font-size: 12.5px;">计算机组成原理</a> <a href="/tags/近现代史/" style="font-size: 10px;">近现代史</a> <a href="/tags/随笔/" style="font-size: 17.5px;">随笔</a> <a href="/tags/高级语言程序设计/" style="font-size: 15px;">高级语言程序设计</a> <a href="/tags/黑盒测试/" style="font-size: 12.5px;">黑盒测试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/30/My-2017/">My 2017</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/15/数据的表示和运算/">数据的表示和运算</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/10/反对外国侵略的斗争/">反对外国侵略的斗争</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/09/The-Power-of-Language/">The Power of Language</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/06/高级语言相关概念/">第一章 · 高级语言相关概念</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Qin朝<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

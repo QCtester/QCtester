@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>第一章 · 初始C++的函数和对象 | Qin朝 | 我是一名测试</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="C++如何兼容面向过程设计，以及它的基本程序结构以及其在函数设计上与C语言的异同。初始C++的函数和对象    理解C++语言与C语言的关系，达到“领会”层次。   熟练掌握函数原型和命名空间的使用方法，达到“综合应用”层次。">
+<meta name="keywords" content="学习,C++程序设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一章 · 初始C++的函数和对象">
+<meta property="og:url" content="https://QCtester.github.io/2017/01/05/初始C++的函数和对象/index.html">
+<meta property="og:site_name" content="Qin朝 | 我是一名测试">
+<meta property="og:description" content="C++如何兼容面向过程设计，以及它的基本程序结构以及其在函数设计上与C语言的异同。初始C++的函数和对象    理解C++语言与C语言的关系，达到“领会”层次。   熟练掌握函数原型和命名空间的使用方法，达到“综合应用”层次。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-12-23T11:03:12.725Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第一章 · 初始C++的函数和对象">
+<meta name="twitter:description" content="C++如何兼容面向过程设计，以及它的基本程序结构以及其在函数设计上与C语言的异同。初始C++的函数和对象    理解C++语言与C语言的关系，达到“领会”层次。   熟练掌握函数原型和命名空间的使用方法，达到“综合应用”层次。">
+  
+    <link rel="alternate" href="/atom.xml" title="Qin朝 | 我是一名测试" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Qin朝 | 我是一名测试</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">You are the best!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://QCtester.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-初始C++的函数和对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/05/初始C++的函数和对象/" class="article-date">
+  <time datetime="2017-01-04T23:04:37.000Z" itemprop="datePublished">2017-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      第一章 · 初始C++的函数和对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>C++如何兼容面向过程设计，以及它的基本程序结构以及其在函数设计上与C语言的异同。<br>初始C++的函数和对象  </p>
+<ol>
+<li>理解C++语言与C语言的关系，达到“领会”层次。  </li>
+<li>熟练掌握函数原型和命名空间的使用方法，达到“综合应用”层次。  <a id="more"></a>  </li>
+<li>理解对象和预处理等基本概念，达到“领会”层次。  </li>
+<li>熟练掌握C++程序的基本结构，达到“综合应用”层次。  </li>
+</ol>
+<h3 id="C-语言和C语言的关系："><a href="#C-语言和C语言的关系：" class="headerlink" title="C++语言和C语言的关系："></a>C++语言和C语言的关系：</h3><p>要尽快熟悉C++语言中的对象，首先要简单地将原来C语言中的变量改称为对象，即只要换一下思维模式，就可以通过C语言的变量认识C++语言的对象。例如C语言的机构变量，在C++中则称为结构对象。<br><strong>使用结构对象的示例程序。</strong>  </p>
+<pre><code>/* 功能：将结构对象的两个域值相加，乘以2再加50 */  
+#include &lt; iostream &gt;                  //包含头文件  
+using mamespace std;                   //使用命名空间  
+int result(int , int);                 //result 函数的原型声明  
+const int k=2;                         //定义常量  
+struct Point{                          //定义结构point  
+    int x,y;                           //定义结构成员x和y  
+}；
+                                       //空行  
+int main()                             //主程序
+{                                      //主程序开始
+    int z(0),b(50);                    //初始化整数对象
+    Point a;                           //定义结构对象a
+    cout &lt;&lt;&quot;输入两个整数(以空格区分):&quot;;    //输出提示信息
+    cin &gt;&gt;a.x &gt;&gt;a.y;                   //接受输入数值
+    z=(a.x+a.y)*k;                     //计算结果
+    z=result(z.b);                     //计算结果
+    cout &lt;&lt;&quot;计算结果如下:&quot;&lt;&lt;endl;        //输出信息并换行
+    cout &lt;&lt;&quot;((&quot;&lt;&lt;a.x&lt;&lt;&quot;+&quot;&lt;&lt;a.y         //输出信息
+         &lt;&lt;&quot;)*&quot;&lt;&lt;k&lt;&lt;&quot;)+&quot;&lt;&lt;b            //输出信息
+         &lt;&lt;&quot;=&quot;&lt;&lt;z                      //输出结果
+         &lt;&lt;endl;                       //换行
+         return 0;                     //主函数main的返回值
+}                                      //主函数结束
+//*************************
+//* 函 数：result          *
+//* 参 数：整型对象a 和 b    *
+//*************************
+int result (int a,int b)
+{
+    return a+b;                        //返回a+b
+}  
+</code></pre><h5 id="混合型语言"><a href="#混合型语言" class="headerlink" title="混合型语言"></a>混合型语言</h5><p>C++程序以.cpp作为文件扩展名，并且必须有一个且只能有一个名为main（不是C++的关键词）的主函数。真正的面向对象语言没有主函数，C++保留了这个面向过程的主函数，所以称之为混合型语言。  </p>
+<h5 id="灵活的注释方式"><a href="#灵活的注释方式" class="headerlink" title="灵活的注释方式"></a>灵活的注释方式</h5><pre><code>C++除沿用C语言的从“ /* ”开始，直到“ */ &quot;结束的注释方式之外，引入了更灵活的注释方式&quot;//&quot;，注释的有效范围从“//”至本行结束。  
+</code></pre><h5 id="使用输出和输入对象"><a href="#使用输出和输入对象" class="headerlink" title="使用输出和输入对象"></a>使用输出和输入对象</h5><p>C++将数据从一个对象流向另一个对象的流动抽象为“流”。<br>从流中获取数据的操作称为提取操作。<br>当程序需要执行键盘输入时，可以使用提取操作符“&gt;&gt;”从cin输入流中提取字符，例如语句”cin &gt;&gt; a.x;” 用来从键盘获取输入数据给a.x。<br>向流中添加数据的操作称为插入操作。<br>当程序需要在屏幕上显示输出时，可以使用插入操作符”&lt;&lt;”向cout输出流中插入字符，例如语句“cout&lt;&lt;”We”:”用来想屏幕输出显示信息“We”。<br>cin用来处理标准输入，即键盘输入。cout用来处理标准输出，即屏幕输出。cin和cout都能对数据自动按照正确的默认格式处理。  </p>
+<ol>
+<li>C++语句以分号作为结束。  </li>
+<li>cin和cout都不是C++语言本身定义的一部分，而是由C++的一套面向对象类体系提供支持并作为C++标准程序库的一员，所有在使用它们之前，需要在主函数前使用#include语句将其包含。  </li>
+<li>C++标准输入输入库的头文件是iostream，在程序中使用它的方法：#include <iostream>  </iostream></li>
+<li>符号”&gt;&gt;”和”&lt;&lt;”形象地表示了数据流动的方向。可以在一条语句中多次使用流的符号，也可以分为多个语句。  </li>
+<li>语句”cout&lt;&lt;endl:”与”cout&lt;&lt;”\n”;”的功能都是换行，即将光标位置切换到下一行的起点。  </li>
+<li><p>endl可以插在流的中间：cout&lt;&lt;a.x&lt;&lt;endl&lt;&lt;a.y&lt;&lt;endl;  </p>
+<h5 id="使用命名空间"><a href="#使用命名空间" class="headerlink" title="使用命名空间"></a>使用命名空间</h5><p>命名空间（namespace）是一种将程序库名称封装起来的方法，它提高了程序的性能和可靠性。<br>C++标准中的标准类库的变量与函数都属于命名空间std，若要在程序中使用cin和cout这两个iostream类的对象，不仅要包含iostream头文件，还得让命名空间std内的名称曝光，这一条语句就是让空间命名中的名称曝光。<br>可以自己定义符合标准库的头文件，使用这种头文件时，也需要同时使用命名空间语句。一般的程序都要具有如下两条语句：  </p>
+<p> #include &lt; iostream &gt;                        //包含头文件<br> using namespace std;                         //使用命名空间  </p>
+<h5 id="对象的定义及初始化"><a href="#对象的定义及初始化" class="headerlink" title="对象的定义及初始化"></a>对象的定义及初始化</h5><p>定义对象包括为它命名并赋予它数据类型。<br>本程序使用了一种不同的初始化语法，称为构造函数语法。 </p>
+<p> int z(0)                                     //等同于 int z=0<br> int b(50)                                    //等同于 int b=50  </p>
+<h5 id="函数原型及其返回值"><a href="#函数原型及其返回值" class="headerlink" title="函数原型及其返回值"></a>函数原型及其返回值</h5><p>函数都需要有类型说明。int main()指出main是整数类型，返回值由return后面的表达式决定，且表达式的值必须与声明函数的类型一致。<br>如果函数确实不需要返回值，还可用void标识，一旦使用void标识，函数体内就不再需要使用return语句。如果再使用“return 0;”，则编译出错。但可使用”return;”语句。<br>以后对无需返回值的函数使用void的形式且不使用return语句。<br>C++函数有库函数（标准函数）和自定义函数两类。<br>C++程序使用变量的基本规则是：必须先声明，后使用，对函数调用也是如此。<br><strong>为了全面严格检查调用函数是否匹配，应该养成使用函数原型声明的好习惯</strong>  </p>
+<h5 id="const修饰符和预处理程序"><a href="#const修饰符和预处理程序" class="headerlink" title="const修饰符和预处理程序"></a>const修饰符和预处理程序</h5><p>C语言一般使用宏定义”#define”定义常量，在C++中，建议使用const代替宏定义。<br>const是放在语句定义之前的，因此可以进行类型判别。<br>用关键词const修饰的标识符是一类特殊的常量，成为符号常量，或const变量。<br>使用const允许编译器对其进行类型检查并可以改善程序的可读性。  </p>
+<p> 为了强调常量的不变形，可以仍然用“=”号进行初始化。<br>因为被const修饰的变量的值在程序中不能被改变，所以在声明符号常量时，必须对符号常量进行初始化，除非这个常量是用extern修饰的外部变量。<br>const的用处不仅仅是在常量表达式中代替宏定义。如果一个变量在生存期中的值不会改变，就应该用const来修饰这个变量，以提高程序的安全性。<br>C++语言预处理程序不是C++编译程序的一部分，它负责分析处理几种特殊的语句，这些语句被称为预处理语句。顾名思义，预处理程序对这几种特殊语句的分析处理是在编译程序的其他部分之前进行的。为了与一般的C++程序语句相区别，所有预处理语句都以位于行首的符号”#”开始。  </p>
+<p> 预处理语句有3种：宏定义、文件包含和条件编译。<br>采用尖括号引用系统提供的包括文件，C++编译系统将首先在C++语言系统设定的目录中寻找包含文件，如果没有找到，就到指定的目录中去寻找。<br>采用双引号引用自己定义的包含文件（一般都放在自己指定的目录中），这将通知C++编译器在用户当前目录下或指定的目录下寻找包含文件。指定的目录不必在同一个逻辑盘中。  </p>
+<h5 id="程序书写格式"><a href="#程序书写格式" class="headerlink" title="程序书写格式"></a>程序书写格式</h5></li>
+</ol>
+<blockquote>
+<ol>
+<li>括号紧跟在函数后面，但在for和while后面，应用一个空格与左括号隔开以增加可读性。  </li>
+<li>数学运算符号的左右各留一个空格，以与表达式区别。  </li>
+<li>在表示参数时，逗号后面留一个空格。  </li>
+<li>在for、do…while和while语句中，合理使用缩进、一对花括号和空行。  </li>
+<li>适当增加空行和程序注释以增加可读性。  </li>
+<li>太长的程序行应该分为两行或者几行，并注意选取合适的分行和缩进位置。  </li>
+</ol>
+</blockquote>
+<pre><code>TestEngineer！You make my life more exciting.  
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://QCtester.github.io/2017/01/05/初始C++的函数和对象/" data-id="cjvv1qczz000iscjf79fvb7lb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-程序设计/">C++程序设计</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/06/高级语言相关概念/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          第一章 · 高级语言相关概念
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/25/My-2016/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">My 2016</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-程序设计/">C++程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacDown语法/">MacDown语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PiP/">PiP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TestCase/">TestCase</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Themes/">Themes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vi/">vi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10/">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/words/">words</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对象/">对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抓包/">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据的表示与运算/">数据的表示与运算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试用例/">测试用例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/美食/">美食</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机系统概述/">计算机系统概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/近现代史/">近现代史</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高级语言程序设计/">高级语言程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/C-程序设计/" style="font-size: 10px;">C++程序设计</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Language/" style="font-size: 10px;">Language</a> <a href="/tags/MacDown语法/" style="font-size: 10px;">MacDown语法</a> <a href="/tags/PiP/" style="font-size: 10px;">PiP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/TestCase/" style="font-size: 12.5px;">TestCase</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a> <a href="/tags/vi/" style="font-size: 10px;">vi</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/words/" style="font-size: 10px;">words</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/总结/" style="font-size: 12.5px;">总结</a> <a href="/tags/抓包/" style="font-size: 10px;">抓包</a> <a href="/tags/数据的表示与运算/" style="font-size: 10px;">数据的表示与运算</a> <a href="/tags/测试用例/" style="font-size: 12.5px;">测试用例</a> <a href="/tags/环境搭建/" style="font-size: 10px;">环境搭建</a> <a href="/tags/生活/" style="font-size: 12.5px;">生活</a> <a href="/tags/美食/" style="font-size: 10px;">美食</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a> <a href="/tags/计算机系统概述/" style="font-size: 10px;">计算机系统概述</a> <a href="/tags/计算机组成原理/" style="font-size: 12.5px;">计算机组成原理</a> <a href="/tags/近现代史/" style="font-size: 10px;">近现代史</a> <a href="/tags/随笔/" style="font-size: 17.5px;">随笔</a> <a href="/tags/高级语言程序设计/" style="font-size: 15px;">高级语言程序设计</a> <a href="/tags/黑盒测试/" style="font-size: 12.5px;">黑盒测试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/30/My-2017/">My 2017</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/15/数据的表示和运算/">数据的表示和运算</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/10/反对外国侵略的斗争/">反对外国侵略的斗争</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/09/The-Power-of-Language/">The Power of Language</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/06/高级语言相关概念/">第一章 · 高级语言相关概念</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Qin朝<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

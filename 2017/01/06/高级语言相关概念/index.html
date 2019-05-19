@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>第一章 · 高级语言相关概念 | Qin朝 | 我是一名测试</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="程序与程序设计，达到“识记”层次    了解程序的概念。   了解程序设计的任务和主要步骤。高级语言和C语言，达到“识记”层次   了解高级语言的概念和作用。   了解C语言的发展。">
+<meta name="keywords" content="学习,高级语言程序设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一章 · 高级语言相关概念">
+<meta property="og:url" content="https://QCtester.github.io/2017/01/06/高级语言相关概念/index.html">
+<meta property="og:site_name" content="Qin朝 | 我是一名测试">
+<meta property="og:description" content="程序与程序设计，达到“识记”层次    了解程序的概念。   了解程序设计的任务和主要步骤。高级语言和C语言，达到“识记”层次   了解高级语言的概念和作用。   了解C语言的发展。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-12-23T11:03:12.727Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第一章 · 高级语言相关概念">
+<meta name="twitter:description" content="程序与程序设计，达到“识记”层次    了解程序的概念。   了解程序设计的任务和主要步骤。高级语言和C语言，达到“识记”层次   了解高级语言的概念和作用。   了解C语言的发展。">
+  
+    <link rel="alternate" href="/atom.xml" title="Qin朝 | 我是一名测试" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Qin朝 | 我是一名测试</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">You are the best!</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://QCtester.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-高级语言相关概念" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/06/高级语言相关概念/" class="article-date">
+  <time datetime="2017-01-05T23:31:45.000Z" itemprop="datePublished">2017-01-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      第一章 · 高级语言相关概念
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>程序与程序设计，达到“识记”层次  </p>
+<ol>
+<li>了解程序的概念。  </li>
+<li>了解程序设计的任务和主要步骤。<br>高级语言和C语言，达到“识记”层次  </li>
+<li>了解高级语言的概念和作用。  </li>
+<li><p>了解C语言的发展。  </p>
+<a id="more"></a>
+<h4 id="程序与程序设计"><a href="#程序与程序设计" class="headerlink" title="程序与程序设计"></a>程序与程序设计</h4><p>从自然语言角度来说，程序是对解决某个问题的方法步骤的描述；从计算机角度来说，<strong>程序是用某种计算机能理解并执行的计算机语言描述解决问题的方法步骤。</strong><br>程序的特点是有始有终，每个步骤都能操作，所有步骤执行完后，问题便得到解决。<br><strong>程序设计就是分析解决问题的方法步骤，并将其记录下来的过程。</strong>  </p>
+<p> #include &lt;math.h&gt;                             /<em>程序中使用了求绝对值的系统函数</em>/<br> void main()<br> { float a, b, x;                              /<em>说明存放数据的变量</em>/<br> scanf(“%f,%f”,&amp;a,&amp;b);                         /<em>输入a、b两个数据</em>/<br> if (fabs(a) &gt; 0.00001)                        /<em>判断a的绝对值是否 &gt;0.00001，是则认为a不是0</em>/</p>
+<pre><code>{ x = -b/a;                              /*若a不是0，计算根 x */
+  printf（“x=%f\n&quot;, x );                 /*输出根*/
+  }
+</code></pre><p> else</p>
+<pre><code>printf(&quot;Does not have root!\n&quot;);       /*输出根*/
+</code></pre><p> }<br>这是一个计算机程序，编写程序（包括程序输入、调试直到正确）的过程称为程序设计。  </p>
+</li>
+</ol>
+<h4 id="高级语言和C语言"><a href="#高级语言和C语言" class="headerlink" title="高级语言和C语言"></a>高级语言和C语言</h4><p>低级语言又称“面向机器的语言”<br>主要的低级语言有：二进制语言、符号语言、汇编语言。  </p>
+<p>程序设计人员可以利用这种计算机语言直接写出各种表达式来描述简单的计算机过程，这种语言提供的各种控制语句可以描述复杂的加工处理过程。专家将这种语言称为<strong>“高级语言”</strong>，而将二进制语言和汇编语言统称为<strong>“低级语言”</strong>。<br>由于高级语言是面向算法过程进行描述的，所以又将高级语言统称为“面向过程的语言”。  </p>
+<p>高级语言编写的程序称为“源程序”。源程序是不能在计算机上直接运行的，必须将其翻译成二进制程序后才能执行。<br>翻译过程有两种方式：  </p>
+<blockquote>
+<p>一种是翻译一句执行一句，称为“解释执行”方式，完成翻译工作的程序就称为“解释程序”；<br>另一种是全部翻译成二进制程序后再执行，承担翻译工作的程序就称为“编译程序”，编译后的二进制程序称为“目标程序”。</p>
+</blockquote>
+<ol>
+<li>世界上第一个高级语言是“ALGOL（算法语言的缩写）“；</li>
+<li>第二个高级语言是”FOR-TRAN（公式翻译的缩写）“</li>
+</ol>
+<p>C语言的主要特点可以概括如下：  </p>
+<ol>
+<li>比其他高级语言更接近硬件，比低级语言更容易描述算法，程序易编、易读、易查错、易修改。可以说兼有高级语言的和低级语言的优点。  </li>
+<li>数据类型和运算符号十分丰富，程序设计和算法描述更为简单和方便。  </li>
+<li>语法结构简单，语句数目少，简单易学。  </li>
+<li>它是一种结构化程序的设计语言，提供了完整的程序控制语句（选择语句和循环语句），很适合结构化的程序设计方法。  </li>
+<li>它是一种模块化程序设计语言，适合大型软件的研制和调用。  </li>
+<li>它提供了大量的库函数供调用，简化了程序设计工作。  </li>
+</ol>
+<h4 id="算法及其描述"><a href="#算法及其描述" class="headerlink" title="算法及其描述"></a>算法及其描述</h4><p>广义地说，算法就是解决问题的方法。<br>从计算机角度来说，算法是计算机程序中解决问题的方法步骤。<br><em>算法是程序的灵魂，是程序设计的第一步。对初学程序设计的人来说，正确的选择算法，分解出算法步骤是完成程序设计的关键。</em><br>“流程图”，用标准的图形元素来描述算法步骤，结构一目了然。  </p>
+<pre><code>TestEngineer！You make my life more exciting.  
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://QCtester.github.io/2017/01/06/高级语言相关概念/" data-id="cjvv1qd0a000wscjfe71ll53x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/高级语言程序设计/">高级语言程序设计</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/01/09/The-Power-of-Language/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          The Power of Language
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/01/05/初始C++的函数和对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">第一章 · 初始C++的函数和对象</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/C-程序设计/">C++程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/">Charles</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JDK/">JDK</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Language/">Language</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MacDown语法/">MacDown语法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PiP/">PiP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSH/">SSH</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TestCase/">TestCase</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Themes/">Themes</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vi/">vi</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/win10/">win10</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/words/">words</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习/">学习</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对象/">对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/抓包/">抓包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据的表示与运算/">数据的表示与运算</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试用例/">测试用例</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/美食/">美食</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/英语/">英语</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机系统概述/">计算机系统概述</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机组成原理/">计算机组成原理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/近现代史/">近现代史</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/高级语言程序设计/">高级语言程序设计</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/黑盒测试/">黑盒测试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C/" style="font-size: 10px;">C++</a> <a href="/tags/C-程序设计/" style="font-size: 10px;">C++程序设计</a> <a href="/tags/Charles/" style="font-size: 10px;">Charles</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/Language/" style="font-size: 10px;">Language</a> <a href="/tags/MacDown语法/" style="font-size: 10px;">MacDown语法</a> <a href="/tags/PiP/" style="font-size: 10px;">PiP</a> <a href="/tags/Python/" style="font-size: 12.5px;">Python</a> <a href="/tags/SSH/" style="font-size: 10px;">SSH</a> <a href="/tags/TestCase/" style="font-size: 12.5px;">TestCase</a> <a href="/tags/Themes/" style="font-size: 10px;">Themes</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a> <a href="/tags/vi/" style="font-size: 10px;">vi</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/words/" style="font-size: 10px;">words</a> <a href="/tags/函数/" style="font-size: 10px;">函数</a> <a href="/tags/学习/" style="font-size: 20px;">学习</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/总结/" style="font-size: 12.5px;">总结</a> <a href="/tags/抓包/" style="font-size: 10px;">抓包</a> <a href="/tags/数据的表示与运算/" style="font-size: 10px;">数据的表示与运算</a> <a href="/tags/测试用例/" style="font-size: 12.5px;">测试用例</a> <a href="/tags/环境搭建/" style="font-size: 10px;">环境搭建</a> <a href="/tags/生活/" style="font-size: 12.5px;">生活</a> <a href="/tags/美食/" style="font-size: 10px;">美食</a> <a href="/tags/英语/" style="font-size: 10px;">英语</a> <a href="/tags/计算机系统概述/" style="font-size: 10px;">计算机系统概述</a> <a href="/tags/计算机组成原理/" style="font-size: 12.5px;">计算机组成原理</a> <a href="/tags/近现代史/" style="font-size: 10px;">近现代史</a> <a href="/tags/随笔/" style="font-size: 17.5px;">随笔</a> <a href="/tags/高级语言程序设计/" style="font-size: 15px;">高级语言程序设计</a> <a href="/tags/黑盒测试/" style="font-size: 12.5px;">黑盒测试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">December 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/12/30/My-2017/">My 2017</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/15/数据的表示和运算/">数据的表示和运算</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/10/反对外国侵略的斗争/">反对外国侵略的斗争</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/09/The-Power-of-Language/">The Power of Language</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/06/高级语言相关概念/">第一章 · 高级语言相关概念</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Qin朝<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
