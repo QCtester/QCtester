@@ -96,47 +96,16 @@
 <blockquote>
 <p>四大组件分别是：Activity、Service、Content Provider、Broadcast Receiver。<br>五大布局分别是：FrameLayout（框架布局），LinearLayout（线性布局），AbsoluteLayout（绝对布局），RelativeLayout（相对布局），TableLayout（表格布局）。  </p>
 </blockquote>
-<h2 id="Android-四大组件"><a href="#Android-四大组件" class="headerlink" title="Android 四大组件"></a>Android 四大组件</h2><h3 id="1-activity"><a href="#1-activity" class="headerlink" title="1. activity"></a>1. activity</h3><p>Activity是Android应用与用户之间建立连接的桥梁，展现在用户面前界面都是以Activity为载体，其他运载着各种按钮、菜单、列表、文字描述等等控件，做为一个占据窗口的组建，它需要做很多的持续化事情，并做好生命周期的管理以及跳转处理。<br><img src="/qinchao2016/2019/05/27/Android基础 -- 四大组件 五大布局/Users/qinchao/qinchao2016/source/_posts/Android基础 -- 四大组件 五大布局/Activity生命周期.png" alt="Activity生命周期"></p>
-<p>Activity本身是没有界面的，需要使用<strong>setContentView(View)</strong>接口把界面设置进Activity中。</p>
-<ul>
-<li>一个Activity通常就是一个单独的屏幕（窗口）。  </li>
-<li>Activity之间通过Intent进行通信。  </li>
-<li>Android应用中每一个Activity都必须要在AndroidManifest.xml配置文件中声明，否则系统将不识别也不执行改Activity。  </li>
-</ul>
-<h3 id="2-Service"><a href="#2-Service" class="headerlink" title="2. Service"></a>2. Service</h3><p><strong>（1）Service用于在后台完成用户指定的操作。Service分为两种：</strong>  </p>
-<ul>
-<li>started（启动）：当应用程序组件（如Activity）调用startService()方法启动服务时，服务处于started状态。  </li>
-<li>bound（绑定）：当应用程序组件调用bindService()方法绑定到服务时，服务处于bound状态。  </li>
-</ul>
-<p><strong>（2）startService()与bindService()区别</strong></p>
-<ul>
-<li>startService()方法启用服务，是由其他组件调用startService()方法启动的，这导致服务的onStartCommand()方法被调用。当服务时started状态时，其生命周期与启动它的组件无关，并且可以在后台无限期运行，即使启动服务的组件已经被销毁。因此，服务需要在完成任务后调用stopSelf()方法停止，或者由其他组件调用stopService()方法停止。  </li>
-<li>使用bindService()方法启用服务，调用者与服务绑定在一起了，调用者一旦退出，服务也就终止。  </li>
-</ul>
-<p><strong>（3）需要在应用程序配置文件中声明全部的Service，使用<service></service>标签</strong>  </p>
-<p><strong>（4）Service通常位于后台运行，它一般不需要与用户交互，因此Service组件没有图形用户界面。Service组件需要继承Service基类。Service组件通常用于为其他组件提供后台服务或监控其他组件的运行状态。</strong>  </p>
-<h3 id="3-Content-Provider"><a href="#3-Content-Provider" class="headerlink" title="3. Content Provider"></a>3. Content Provider</h3><p><strong>（1）Android平台提供了Content Provider使一个应用程序的指定数据集提供给其他应用程序。其他应用可以通过ContentPesolver类从该内容提供者中获取或存入数据。</strong>  </p>
-<p><strong>（2）只有需要在多个应用程序间共享数据是才需要内容提供者。例如，通讯录数据被多个应用程序使用，且必须存储在一个内容提供者中。它的好处是统一数据访问方式。</strong>  </p>
-<p><strong>（3）ContentProvider实现数据共享。ContentProvider用于保存和获取数据，并使其对所有应用程序可见。这是不同应用程序间共享数据的唯一方式，因为android没有提供所有应用共同访问的公共存储区。</strong>  </p>
-<p><strong>（4）开发人员不会直接使用ContentProvider类的对象，大多数是通过ContentResolver对象实现对ContentProvider的操作。</strong>  </p>
-<p><strong>（5）ContentProvider使用URI来唯一标识其数据集，这里的URI以content://作为前缀，表示该数据由ContentProvider来管理。</strong></p>
-<h3 id="4-Broadcast-Receiver"><a href="#4-Broadcast-Receiver" class="headerlink" title="4. Broadcast Receiver"></a>4. Broadcast Receiver</h3><p><strong>（1）你的应用可以使用它对外部事件进行过滤，只对感兴趣的外部事件(如当电话呼入时，或者数据网络可用时)进行接收并做出响应。广播接收器没有用户界面。然而，它们可以启动一个activity或serice来响应它们收到的信息，或者用NotificationManager来通知用户。通知可以用很多种方式来吸引用户的注意力，例如闪动背灯、震动、播放声音等。一般来说是在状态栏上放一个持久的图标，用户可以打开它并获取消息。</strong>  </p>
-<p><strong>（2）广播接收者的注册有两种方法，分别是程序动态注册和AndroidManifest文件中进行静态注册。</strong></p>
-<p><strong>（3）动态注册广播接收器特点是当用来注册的Activity关掉后，广播也就失效了。静态注册无需担忧广播接收器是否被关闭，只要设备是开启状态，广播接收器也是打开着的。也就是说哪怕app本身未启动，该app订阅的广播在触发时也会对它起作用。</strong>  </p>
-<h3 id="Android四大组件总结："><a href="#Android四大组件总结：" class="headerlink" title="Android四大组件总结："></a>Android四大组件总结：</h3><p><strong>（1）4大组件的注册</strong><br>4大基本组件都需要注册才能使用，每个Activity、service、Content Provider都需要在AndroidManifest文件中进行配置。AndroidManifest文件中未进行声明的activity、服务以及内容提供者将不为系统所见，从而也就不可用。而broadcast receiver广播接收者的注册分静态注册（在AndroidManifest文件中进行配置）和通过代码动态创建并以调用Context.registerReceiver()的方式注册至系统。需要注意的是在AndroidManifest文件中进行配置的广播接收者会随系统的启动而一直处于活跃状态，只要接收到感兴趣的广播就会触发（即使程序未运行）。  </p>
-<p><strong>（2）4大组件的激活</strong><br>内容提供者的激活：当接收到ContentResolver发出的请求后，内容提供者被激活。而其它三种组件activity、服务和广播接收器被一种叫做intent的异步消息所激活。  </p>
-<p><strong>（3）4大组件的关闭</strong><br>内容提供者仅在响应ContentResolver提出请求的时候激活。而一个广播接收器仅在响应广播信息的时候激活。所以，没有必要去显式的关闭这些组件。Activity关闭：可以通过调用它的finish()方法来关闭一个activity。服务关闭：对于通过startService()方法启动的服务要调用Context.stopService()方法关闭服务，使用bindService()方法启动的服务要调用Contex.unbindService()方法关闭服务。  </p>
-<p><strong>（4）android中的任务（activity栈）</strong>  </p>
-<ul>
-<li>任务其实就是activity的栈，它由一个或多个Activity组成，共同完成一个完整的用户体验。栈底的是启动整个任务的Activity，栈顶的是当前运行的用户可以交互的Activity，当一个activity启动另外一个的时候，新的activity就被压入栈，并成为当前运行的activity。而前一个activity仍保持在栈之中。当用户按下BACK键的时候，当前activity出栈，而前一个恢复为当前运行的activity。栈中保存的其实是对象，栈中的Activity永远不会重排，只会压入或弹出。  </li>
-<li>任务中的所有activity是作为一个整体进行移动的。整个的任务（即activity栈）可以移到前台，或退至后台。  </li>
-<li>Android系统是一个多任务(Multi-Task)的操作系统，可以在用手机听音乐的同时，也执行其他多个程序。每多执行一个应用程序，就会多耗费一些系统内存，当同时执行的程序过多，或是关闭的程序没有正确释放掉内存，系统就会觉得越来越慢，甚至不稳定。为了解决这个问题，Android引入了一个新的机制，即生命周期(Life Cycle)。  </li>
-</ul>
-
+<h2 id="Android-四大组件"><a href="#Android-四大组件" class="headerlink" title="Android 四大组件"></a>Android 四大组件</h2><h3 id="1-activity"><a href="#1-activity" class="headerlink" title="1. activity"></a>1. activity</h3><p>Activity是Android应用与用户之间建立连接的桥梁，展现在用户面前界面都是以Activity为载体，其他运载着各种按钮、菜单、列表、文字描述等等控件，做为一个占据窗口的组建，它需要做很多的持续化事情，并做好生命周期的管理以及跳转处理。<br></p>
+        
+          <p class="article-more-link">
+            <a href="/qinchao2016/2019/05/27/Android基础 -- 四大组件 五大布局/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qinchao2016.github.io/qinchao2016/2019/05/27/Android基础 -- 四大组件 五大布局/" data-id="cjwo940dm0000ys1p5i16bhhl" class="article-share-link">Share</a>
+      <a data-url="https://qinchao2016.github.io/qinchao2016/2019/05/27/Android基础 -- 四大组件 五大布局/" data-id="cjwo96xol0000zz1pkjjeyihx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/Android/">Android</a></li></ul>
@@ -183,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qinchao2016.github.io/qinchao2016/2018/05/05/HttpRunner-接口测试实践/" data-id="cjwo940ed000bys1p9hdpcy6u" class="article-share-link">Share</a>
+      <a data-url="https://qinchao2016.github.io/qinchao2016/2018/05/05/HttpRunner-接口测试实践/" data-id="cjwo96xpe000bzz1porv909h8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/HttpRunner/">HttpRunner</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/接口测试/">接口测试</a></li></ul>
@@ -227,7 +196,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qinchao2016.github.io/qinchao2016/2018/03/05/Hexo无法显示图片/" data-id="cjwo940ea0009ys1pabtrtyyv" class="article-share-link">Share</a>
+      <a data-url="https://qinchao2016.github.io/qinchao2016/2018/03/05/Hexo无法显示图片/" data-id="cjwo96xpc0009zz1p55nqtani" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/Hexo/">Hexo</a></li></ul>
@@ -271,7 +240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/04/05/Python-实例-算法练习/" data-id="cjwo940ek000jys1phw850pbf" class="article-share-link">Share</a>
+      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/04/05/Python-实例-算法练习/" data-id="cjwo96xpl000jzz1p9cfd1rsc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/学习/">学习</a></li></ul>
@@ -314,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/03/20/Python进阶/" data-id="cjwo940em000lys1p4tpghg5g" class="article-share-link">Share</a>
+      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/03/20/Python进阶/" data-id="cjwo96xpn000lzz1psbh4oh80" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/学习/">学习</a></li></ul>
@@ -357,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/03/10/Python基础/" data-id="cjwo940el000kys1p6vxmotq9" class="article-share-link">Share</a>
+      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/03/10/Python基础/" data-id="cjwo96xpm000kzz1pcllf8czg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/学习/">学习</a></li></ul>
@@ -402,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/01/15/数据的表示和运算/" data-id="cjwo940f4001dys1p7tdeocoj" class="article-share-link">Share</a>
+      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/01/15/数据的表示和运算/" data-id="cjwo96xq3001bzz1p9cfflhbb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/学习/">学习</a></li></ul>
@@ -448,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/01/10/反对外国侵略的斗争/" data-id="cjwo940f20018ys1pvhm4rc0h" class="article-share-link">Share</a>
+      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/01/10/反对外国侵略的斗争/" data-id="cjwo96xq10018zz1p866yhzht" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/学习/">学习</a></li></ul>
@@ -491,7 +460,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/01/09/The-Power-of-Language/" data-id="cjwo940er000sys1pttppnxis" class="article-share-link">Share</a>
+      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/01/09/The-Power-of-Language/" data-id="cjwo96xps000szz1pmrcnmzq5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/Language/">Language</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/words/">words</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/学习/">学习</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/英语/">英语</a></li></ul>
@@ -539,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/01/06/高级语言相关概念/" data-id="cjwo940f8001iys1pmqaqv8ul" class="article-share-link">Share</a>
+      <a data-url="https://qinchao2016.github.io/qinchao2016/2017/01/06/高级语言相关概念/" data-id="cjwo96xq7001izz1p9mwti21p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/C/">C</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/qinchao2016/tags/学习/">学习</a></li></ul>
